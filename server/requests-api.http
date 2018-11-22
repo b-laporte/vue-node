@@ -1,0 +1,40 @@
+### Get all posts
+
+GET http://localhost:3000/posts
+Accept: */*
+Cache-Control: no-cache
+
+### New Post
+
+POST http://localhost:3000/posts
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json; charset=utf-8
+
+{
+  "text": "hello world"
+}
+
+### Delete a post with id
+
+DELETE http://localhost:3000/posts/1542793941986
+Accept: */*
+Cache-Control: no-cache
+
+### User login
+
+POST http://localhost:3000/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json; charset=utf-8
+
+{
+  "username": "Admin",
+  "password": "secure!"
+}
+
+### User logout
+
+GET http://localhost:3000/logout
+Accept: */*
+Cache-Control: no-cache

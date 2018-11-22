@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "username": "Admin",
+      "password": "68910163511bd888d1c41a7f296a27f0"
+    }
+  ],
+  "posts": [
+    {
+      "id": "5a412bed-318c-42b1-8d84-5de8aa9e4e88",
+      "date": "1542903848959",
+      "text": "Post one"
+    },
+    {
+      "id": "88da1f73-772d-4e34-aa39-7167c4878ed9",
+      "date": "1542903854412",
+      "text": "Post two"
+    },
+    {
+      "id": "1cca6222-f5bd-4b42-ab6f-136969b1d8ad",
+      "date": "1542903860083",
+      "text": "Post three"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "server/auth.ts",
+    "server/db.ts",
+    "server/express.ts",
+    "server/handlers.ts"
+  ],
+  "exec": "ts-node --project server/tsconfig.json server/express.ts"
+}
