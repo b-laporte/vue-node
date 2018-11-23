@@ -14,9 +14,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="post in posts">
-            <th scope="row">{{ post.id }}</th>
-            <td>{{ post.text }}</td>
+          <tr v-for="(post, index) in posts" :key="post.id">
+            <th scope="row">{{ index+1 }}</th>
+            <td v-bind:title="'id:'+post.id">{{ post.text }}</td>
             <td>
               <button
                 type="button"

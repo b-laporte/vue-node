@@ -5,7 +5,7 @@
       <h1 class="my-4">Page Heading</h1>
 
       <!-- Posts -->
-      <div class="card mb-4" v-for="post in posts">
+      <div class="card mb-4" v-for="post in posts" :key="post.id">
         <div class="card-body">
           <h2 class="card-title">Title</h2>
           <p class="card-text">{{ post.text }}</p>
