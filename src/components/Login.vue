@@ -4,14 +4,15 @@
     <div class="card-body">
       <form v-if="state.user === null">
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" />
+          <input type="email" class="form-control" v-model="user" placeholder="Email" />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password" />
+          <input type="password" class="form-control" v-model="pwd" placeholder="Password" />
         </div>
         <button type="button" @click="login" class="btn btn-primary">
           Login
         </button>
+        <div v-if="invalidCrentials" class="errorMsg"> Invalid User name or password... </div>
       </form>
       <div v-else>
         <div>Hi, {{ state.user.username }}!</div>
@@ -25,15 +26,24 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { loginService} from '@/services/LoginService';
+import { loginService } from '@/services/LoginService';
 import state from '@/state/state';
 
 @Component
 export default class Login extends Vue {
   private state = state;
+  private user = '';
+  private pwd = '';
+  private invalidCrentials = false;
 
   private async login() {
-    state.user = await loginService.login('Admin', 'secret!');
+    this.invalidCrentials = false;
+    try {
+      state.user = await loginService.login(this.user, this.pwd); // Admin / secret!
+      this.pwd = ''; // avoid keeping the password in plain text
+    } catch (e) {
+      this.invalidCrentials = true;
+    }
   }
 
   private async logout() {
@@ -46,5 +56,9 @@ export default class Login extends Vue {
 <style scoped>
 button {
   float: right;
+}
+div.errorMsg {
+  padding-top: 0.4em;
+  color: red;
 }
 </style>

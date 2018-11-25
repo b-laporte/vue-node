@@ -12,6 +12,7 @@ export function initAuthentication(app: Express) {
   passport.use(
     'local',
     new LocalStrategy(async (username, password, done) => {
+      console.log("username", username, password);
       const db = await getDatabase();
       const user = db
         .get('users')

@@ -2,12 +2,12 @@
   <div class="row">
     <!-- Main Column -->
     <div class="col-md-8">
-      <h1 class="my-4">Page Heading</h1>
+      <h1 class="my-4">Hello World !</h1>
 
       <!-- Posts -->
       <div class="card mb-4" v-for="post in posts" :key="post.id">
         <div class="card-body">
-          <h2 class="card-title">Title</h2>
+          <!-- <h2 class="card-title">Title</h2> -->
           <p class="card-text">{{ post.text }}</p>
         </div>
         <div class="card-footer text-muted">
